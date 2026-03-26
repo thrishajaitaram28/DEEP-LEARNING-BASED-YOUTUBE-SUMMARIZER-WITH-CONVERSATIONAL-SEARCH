@@ -66,13 +66,13 @@ def transcribe_audio(audio_file):
     return result["text"]
 
 def summarize_with_gemini(text):
-    model = genai.GenerativeModel("gemini-2.0-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash")
     prompt = f"Summarize the following text concisely:\n\n{text}"
     response = model.generate_content(prompt)
     return response.text
 
 def chat_with_gemini(context, user_question):
-    model = genai.GenerativeModel("gemini-2.0-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash")
     prompt = f"""
 You are a helpful assistant. Use the following context if provided:
 
